@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Binibini 🎀</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: radial-gradient(circle at top left, #fff0f5, #ffe6f0);
+      padding: 60px 20px;
+      text-align: center;
+      animation: fadeIn 1.5s ease-in;
+      overflow-x: hidden;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .header {
+      background-color: #ffb6c1;
+      padding: 20px;
+      border-radius: 25px;
+      max-width: 700px;
+      margin: 0 auto 40px auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 52px;
+      color: white;
+      margin: 0;
+      text-shadow: 1px 1px #ff8da1;
+    }
+
+    #message {
+      font-size: 20px;
+      color: #555;
+      max-width: 700px;
+      margin: 0 auto 30px auto;
+      line-height: 1.8;
+      background-color: #fff0f5;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      white-space: pre-wrap;
+      text-align: left;
+      display: inline-block;
+      visibility: hidden;
+    }
+
+    audio {
+      margin-top: 30px;
+      width: 320px;
+      outline: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 12px 24px;
+      background-color: #ffb6c1;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    a:hover {
+      background-color: #ff8da1;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🎀 Binibini</h1>
+  </div>
+
+  <audio autoplay>
+    <source src="song1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div id="message"></div>
+
+  <a href="playlist.html">← Back to Playlist</a>
+
+  <script>
+    const passage = `To Binibini Kira,
+
+Every time I hear Binibini, I think of you, the way you make my world slow down, the way your presence turns ordinary moments into something magical. Just like the song, you’re the reason my heart beats a little differently now.
+
+You’re my calm in the chaos, my favorite kind of quiet. With you, I’ve found a rhythm I never knew I needed — gentle, steady, full of love. I don’t need grand gestures or perfect words. Just being with you feels like the chorus I want to sing forever.
+
+So here I am, falling for you in every verse, every pause, every breath. You’re my melody Kira! and I’ll keep playing this song for you, always.
+
+With all my heart,
+Mark`;
+
+    const messageDiv = document.getElementById("message");
+
+    setTimeout(() => {
+      messageDiv.style.visibility = "visible";
+      let i = 0;
+      const speed = 30; // typing speed in ms
+      function typeWriter() {
+        if (i < passage.length) {
+          messageDiv.textContent += passage.charAt(i);
+          i++;
+          setTimeout(typeWriter, speed);
+        }
+      }
+      typeWriter();
+    }, 7000); // 7-second delay before typing starts
+  </script>
+</body>
+</html>
